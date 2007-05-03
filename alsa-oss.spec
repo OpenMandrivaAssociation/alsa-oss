@@ -1,9 +1,9 @@
-%define beta 0
+%define beta 1
 %define name alsa-oss
-%define version 1.0.12
+%define version 1.0.14
 
 %define lib_major 0
-%define pre rc3
+%define pre rc4
 
 %define lib_name %mklibname %name %lib_major
 %if %beta
