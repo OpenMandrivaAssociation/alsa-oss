@@ -1,4 +1,4 @@
-%define beta 1
+%define beta 0
 %define name alsa-oss
 %define version 1.0.14
 
