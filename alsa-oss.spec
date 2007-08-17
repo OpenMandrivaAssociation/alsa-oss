@@ -129,4 +129,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc COPYING
 %_bindir/aoss
-%_mandir/man1/aoss.1.bz2
+%_mandir/man1/aoss.*
