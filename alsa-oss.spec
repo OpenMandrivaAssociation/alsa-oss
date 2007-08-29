@@ -6,6 +6,7 @@
 %define pre rc4
 
 %define lib_name %mklibname %name %lib_major
+%define develname %mklibname -d %name
 %if %beta
 %define fname %name-%version%pre
 %else
@@ -58,14 +59,14 @@ To use the features of alsa, one can either use:
 Using the ALSA api requires to use the ALSA library.
 This library provides oss compatibility
 
-%package -n %{lib_name}-devel
+%package -n %develname
 Summary:    Development files for Advanced Linux Sound Architecture (ALSA)
 Group:      Development/C
 Requires:   %lib_name = %epoch:%version
-Provides:   lib%name-devel = %version-%release
-Obsoletes:  lib%name-devel
+Obsoletes:  %{mklibname alsa-oss 1}-devel
+Provides:  %{mklibname alsa-oss 1}-devel = %version-%release
 
-%description -n %{lib_name}-devel
+%description -n %develname
 Advanced Linux Sound Architecture (ALSA) is a modularized architecture which
 supports quite a large range of ISA and PCI cards.
 It's fully compatible with old OSS drivers (either OSS/Lite, OSS/commercial).
@@ -117,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 %_libdir/*.so.*
 
-%files -n %{lib_name}-devel
+%files -n %develname
 %defattr(-,root,root)
 %doc COPYING
 %_libdir/*.a
