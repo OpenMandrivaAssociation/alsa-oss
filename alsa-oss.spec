@@ -80,6 +80,7 @@ that made use of ALSA.
 Summary:    Wrapper script to ease ALSA-OSS compatibility library usage
 Group:      Development/C
 Requires:   %lib_name = %epoch:%version
+Conflicts:  %{mklibname alsa-oss 1}-devel < 1.0.14-2
 
 %description -n aoss
 aoss is a simple wrapper script which facilitates the use
@@ -122,7 +123,6 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/*.a
 %_libdir/*.la
 %_libdir/*.so
-%_bindir/*
 %_includedir/oss-redir.h
 
 %files -n aoss
