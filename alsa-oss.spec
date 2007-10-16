@@ -1,6 +1,6 @@
 %define beta 0
 %define name alsa-oss
-%define version 1.0.14
+%define version 1.0.15
 
 %define lib_major 0
 %define pre rc4
@@ -19,7 +19,7 @@ Version:	%version
 %if %beta
 Release:	%mkrel 0.%{pre}
 %else
-Release:	%mkrel 2
+Release:	%mkrel 1
 %endif
 Epoch:		1
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%fname.tar.bz2
