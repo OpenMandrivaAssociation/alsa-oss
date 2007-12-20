@@ -26,6 +26,7 @@ Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%fname.tar.bz2
 Patch0:     alsa-oss-1.0.10-solink-fix.patch.bz2
 License:	GPL
 Url:		http://www.alsa-project.org/
+BuildRoot:	%_tmppath/%name-%version-root
 Group:		Sound
 Requires:	kernel >= 2.4.18
 BuildRequires: doxygen libalsa-devel > 1.0.5
