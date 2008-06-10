@@ -19,7 +19,7 @@ Version:	%version
 %if %beta
 Release:	%mkrel 0.%{pre}
 %else
-Release:	%mkrel 1
+Release:	%mkrel 2
 %endif
 Epoch:		1
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%fname.tar.bz2
@@ -99,7 +99,7 @@ mands that use the OSS API.
 
 %build
 %configure
-make CFLAGS="$RPM_OPT_FLAGS"
+make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="%ldflags -ldl"
 
 %install
 mkdir -p $RPM_BUILD_ROOT%_includedir/sys
