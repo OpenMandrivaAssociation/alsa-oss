@@ -1,6 +1,6 @@
 %define beta 0
 %define name alsa-oss
-%define version 1.0.15
+%define version 1.0.17
 
 %define lib_major 0
 %define pre rc4
@@ -89,8 +89,8 @@ of the ALSA OSS compatibility library.
 It just sets the appropriate LD_PRELOAD path and then runs the command.
 
 This is useful in cases where routing settings (which can
-be made in your .asoundrc file) need to be applied to com­
-mands that use the OSS API.
+be made in your .asoundrc file) need to be applied to commands that use the
+OSS API.
 
 
 %prep
