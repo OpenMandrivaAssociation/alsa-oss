@@ -19,7 +19,7 @@ Version:	%version
 %if %beta
 Release:	%mkrel 0.%{pre}
 %else
-Release:	%mkrel 2
+Release:	%mkrel 3
 %endif
 Epoch:		1
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%fname.tar.bz2
@@ -98,17 +98,18 @@ OSS API.
 %patch0 -p0
 
 %build
+autoreconf -fiv
 %configure
 make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="%ldflags -ldl"
 
 %install
-mkdir -p $RPM_BUILD_ROOT%_includedir/sys
-mkdir -p $RPM_BUILD_ROOT%_libdir
+mkdir -p %{buildroot}%_includedir/sys
+mkdir -p %{buildroot}%_libdir
 %makeinstall
-rm -f $RPM_BUILD_ROOT%_libdir/libaoss.a
+rm -f %{buildroot}%_libdir/libaoss.a
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post -n %lib_name -p /sbin/ldconfig
@@ -120,7 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %lib_name
 %defattr(-, root, root)
 %doc COPYING
-%_libdir/*.so.*
+%_libdir/*.so.%{lib_major}*
 
 %files -n %develname
 %defattr(-,root,root)
