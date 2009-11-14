@@ -19,11 +19,11 @@ Version:	%version
 %if %beta
 Release:	%mkrel 0.%{pre}
 %else
-Release:	%mkrel 4
+Release:	%mkrel 5
 %endif
 Epoch:		1
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%fname.tar.bz2
-Patch0:     alsa-oss-1.0.10-solink-fix.patch.bz2
+Patch0:		alsa-oss-1.0.12-aoss.patch 
 License:	GPL
 Url:		http://www.alsa-project.org/
 BuildRoot:	%_tmppath/%name-%version-root
@@ -95,17 +95,17 @@ OSS API.
 
 %prep
 %setup -q -n %fname
-%patch0 -p0
+%patch0 -p1
 
 %build
 autoreconf -fiv
-%configure
+%configure2_5x
 make CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="%ldflags -ldl"
 
 %install
 mkdir -p %{buildroot}%_includedir/sys
 mkdir -p %{buildroot}%_libdir
-%makeinstall
+%makeinstall_std
 rm -f %{buildroot}%_libdir/libaoss.a
 
 %clean
