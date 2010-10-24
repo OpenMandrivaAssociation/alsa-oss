@@ -19,7 +19,7 @@ Version:	%version
 %if %beta
 Release:	%mkrel 0.%{pre}
 %else
-Release:	%mkrel 5
+Release:	%mkrel 6
 %endif
 Epoch:		1
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%fname.tar.bz2
@@ -64,7 +64,8 @@ Summary:    Development files for Advanced Linux Sound Architecture (ALSA)
 Group:      Development/C
 Requires:   %lib_name = %epoch:%version
 Obsoletes:  %{mklibname alsa-oss 1}-devel
-Provides:  %{mklibname alsa-oss 1}-devel = %version-%release
+Provides:   %{mklibname alsa-oss 1}-devel = %version-%release
+Provides:   lib%name-devel = %version-%release, %name-devel = %version-%release
 
 %description -n %develname
 Advanced Linux Sound Architecture (ALSA) is a modularized architecture which
