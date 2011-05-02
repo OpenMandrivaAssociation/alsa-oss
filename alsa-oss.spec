@@ -19,7 +19,7 @@ Version:	%version
 %if %beta
 Release:	%mkrel 0.%{pre}
 %else
-Release:	%mkrel 6
+Release:	%mkrel 7
 %endif
 Epoch:		1
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%fname.tar.bz2
