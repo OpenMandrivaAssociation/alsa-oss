@@ -1,9 +1,7 @@
 %define beta 0
-%define name alsa-oss
-%define version 1.0.17
 
 %define lib_major 0
-%define pre rc4
+%define pre %nil
 
 %define lib_name %mklibname %name %lib_major
 %define develname %mklibname -d %name
@@ -14,19 +12,18 @@
 %endif
 
 Summary:	Advanced Linux Sound Architecture (ALSA) library
-Name:		%name
-Version:	%version
+Name:		alsa-oss
+Version:	1.0.25
 %if %beta
-Release:	%mkrel 0.%{pre}
+Release:	0.%pre
 %else
-Release:	%mkrel 7
+Release:	1
 %endif
 Epoch:		1
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%fname.tar.bz2
 Patch0:		alsa-oss-1.0.12-aoss.patch 
 License:	GPL
 Url:		http://www.alsa-project.org/
-BuildRoot:	%_tmppath/%name-%version-root
 Group:		Sound
 Requires:	kernel >= 2.4.18
 BuildRequires: doxygen libalsa-devel > 1.0.5
