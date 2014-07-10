@@ -5,8 +5,8 @@
 
 Summary:	Advanced Linux Sound Architecture (ALSA) library
 Name:		alsa-oss
-Version:	1.0.25
-Release:	12
+Version:	1.0.28
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Sound
@@ -80,7 +80,7 @@ OSS API.
 
 %build
 autoreconf -fiv
-%configure2_5x
+%configure
 %make CFLAGS="%{optflags} -O0" LDFLAGS="%{ldflags} -ldl"
 
 %install
