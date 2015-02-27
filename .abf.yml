@@ -1,4 +1,2 @@
-removed_sources:
-  alsa-oss-1.0.25.tar.bz2: 17b617ca6b269557c4d5b67cc369e594daf07cb4
 sources:
-  alsa-oss-1.0.28.tar.bz2: 347282c33c6ba0a328d314c6e8b105defc1a575d
+  alsa-oss-1.0.29.tar.bz2: 347282c33c6ba0a328d314c6e8b105defc1a575d
