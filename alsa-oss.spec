@@ -6,13 +6,14 @@
 Summary:	Advanced Linux Sound Architecture (ALSA) library
 Name:		alsa-oss
 Version:	1.1.6
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Sound
 Url:		http://www.alsa-project.org/
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%{name}-%{version}.tar.bz2
 Patch0:		alsa-oss-1.0.12-aoss.patch
+Patch1:		fix-build.patch
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(alsa)
 
@@ -75,19 +76,18 @@ be made in your .asoundrc file) need to be applied to commands that use the
 OSS API.
 
 %prep
-%setup -q
-%patch0 -p1
+%autosetup -p1
 
 %build
 autoreconf -fiv
 %configure
-%make CFLAGS="%{optflags} -O0" LDFLAGS="%{ldflags} -ldl"
+%make_build CFLAGS="%{optflags} -O0" LDFLAGS="%{ldflags} -ldl"
 
 %install
 mkdir -p %{buildroot}%{_includedir}/sys
 mkdir -p %{buildroot}%{_libdir}
 
-%makeinstall_std
+%make_install
 
 rm -f %{buildroot}%{_libdir}/*.a
 
