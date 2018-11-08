@@ -1,0 +1,11 @@
+diff -up ./alsa/stdioemu.c.tv ./alsa/stdioemu.c
+--- ./alsa/stdioemu.c.tv	2018-04-03 09:01:38.000000000 +0200
++++ ./alsa/stdioemu.c	2018-09-21 14:30:05.380655345 +0200
+@@ -37,7 +37,6 @@
+ #endif
+ 
+ #include <stdio.h>
+-#include <libio.h>
+ 
+ struct fd_cookie {
+ 	int fd;
