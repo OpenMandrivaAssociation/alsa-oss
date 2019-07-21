@@ -5,15 +5,14 @@
 
 Summary:	Advanced Linux Sound Architecture (ALSA) library
 Name:		alsa-oss
-Version:	1.1.6
-Release:	3
+Version:	1.1.8
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Sound
 Url:		http://www.alsa-project.org/
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%{name}-%{version}.tar.bz2
 Patch0:		alsa-oss-1.0.12-aoss.patch
-Patch1:		fix-build.patch
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(alsa)
 
