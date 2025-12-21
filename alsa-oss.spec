@@ -13,6 +13,11 @@ Group:		Sound
 Url:		https://www.alsa-project.org/
 Source0:	ftp://ftp.alsa-project.org/pub/oss-lib/%{name}-%{version}.tar.bz2
 Patch0:		alsa-oss-1.0.12-aoss.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(alsa)
 
